@@ -1,0 +1,85 @@
+$formBgColor: #4a22be;
+$formBgShade: #271364;
+$buttonBgColor: #00ffc6;
+
+.Top {
+  .Top__charcount {
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+  }
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background: $formBgColor;
+    border-bottom: 2px solid #c5c5c5;
+    padding: 20px 10px;
+  }
+
+  textarea {
+    border: none;
+    width: 83%;
+    font-size: 1.3em;
+    line-height: 1.7em;
+    background: $formBgShade;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    height: 50px;
+  }
+
+  textarea:focus {
+    outline: 1px solid transparent;
+  }
+
+  textarea[data-valid="false"] {
+    background: #f60594;
+  }
+
+  textarea::placeholder {
+    font-family: "Work Sans", sans-serif;
+    color: white;
+  }
+
+  button {
+    margin: 10px 0 0 0;
+    padding: 20px;
+    width: 45px;
+    height: 45px;
+    text-indent: -99999px;
+    border: none;
+    position: relative;
+    background: $buttonBgColor;
+    border-radius: 50px;
+
+    span {
+      width: 15px;
+      height: 5px;
+      background: $formBgColor;
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: 15px;
+    }
+
+    span:nth-child(2) {
+      transform: rotate(90deg);
+    }
+  }
+
+  button:disabled {
+    background: #c5c5c5;
+
+    span {
+      background: $formBgShade;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Top form {
+    background: transparent;
+  }
+}
